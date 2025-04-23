@@ -53,7 +53,7 @@ jobs:
       # 构建 Ghidra
       - name: Build Ghidra
         run: |
-          gradle buildGhidra
+          gradle buildGhidra --parallel --max-workers=4
 
       # 保存构建结果
       - name: Upload build artifacts
