@@ -99,7 +99,7 @@ public class FileSystemBrowserPlugin extends Plugin
 		openFilesystemAction = new ActionBuilder("Open File System", this.getName())
 				.description(getPluginDescription().getDescription())
 				.enabledWhen(ac -> tool.getProject() != null)
-				.menuPath(ToolConstants.MENU_FILE, "Open File System...")
+				.menuPath(ToolConstants.MENU_FILE, "打开文件系统...")
 				.menuGroup("Import", "z")
 				.keyBinding(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_DOWN_MASK))
 				.onAction(ac -> doOpenFileSystem())
