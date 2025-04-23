@@ -312,7 +312,7 @@ class FileActionManager {
 				break;
 			}
 			if (!domainObjects[lastIndex].lock(null)) {
-				String title = "Exit Ghidra";
+				String title = "退出 Ghidra";
 				StringBuffer buf = new StringBuffer();
 				DomainObject d = domainObjects[lastIndex];
 				buf.append("The File " + files.get(lastIndex).getPathname() +
@@ -333,7 +333,7 @@ class FileActionManager {
 				buf.append("Do you want to abort the action(s) and exit Ghidra?");
 
 				int result = OptionDialog.showOptionDialog(tool.getToolFrame(), title,
-					buf.toString(), "Exit Ghidra", OptionDialog.WARNING_MESSAGE);
+					buf.toString(), "退出 Ghidra", OptionDialog.WARNING_MESSAGE);
 
 				if (result == OptionDialog.CANCEL_OPTION) {
 					locked = false;
