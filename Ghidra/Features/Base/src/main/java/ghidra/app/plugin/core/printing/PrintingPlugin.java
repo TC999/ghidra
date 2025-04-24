@@ -431,10 +431,10 @@ public class PrintingPlugin extends ProgramPlugin {
 
 	class PageSetupAction extends DockingAction {
 		public PageSetupAction() {
-			super("Page Setup", PrintingPlugin.NAME);
+			super("页面设置", PrintingPlugin.NAME);
 			// ACTIONS - auto generated
 			MenuData menuData = new MenuData(
-				new String[] { ToolConstants.MENU_FILE, "Page Setup..." }, null, "Print");
+				new String[] { ToolConstants.MENU_FILE, "页面设置..." }, null, "Print");
 			menuData.setMenuSubGroup("b");
 			setMenuBarData(menuData);
 
