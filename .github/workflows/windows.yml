@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin' # 使用 Adoptium Temurin JDK
-          java-version: '20'
+          java-version: '21'
 
       # 设置 Python 3
       - name: Set up Python 3
