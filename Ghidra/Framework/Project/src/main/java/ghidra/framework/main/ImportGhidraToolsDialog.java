@@ -50,13 +50,13 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 	 */
 	ImportGhidraToolsDialog(FrontEndTool tool) {
 
-		super("Import Ghidra Tools", true);
-		setHelpLocation(new HelpLocation(ToolConstants.TOOL_HELP_TOPIC, "Import Ghidra Tools"));
+		super("导入 Ghidra 工具", true);
+		setHelpLocation(new HelpLocation(ToolConstants.TOOL_HELP_TOPIC, "导入 Ghidra 工具"));
 
 		this.tool = tool;
 
 		mainPanel = createPanel();
-		mainPanel.getAccessibleContext().setAccessibleName("Import Ghidra Tools");
+		mainPanel.getAccessibleContext().setAccessibleName("导入 Ghidra 工具");
 		addWorkPanel(mainPanel);
 
 		addOKButton();
@@ -105,11 +105,11 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 
 		availableToolsPanel.add(myButtonPanel, BorderLayout.EAST);
 		availableToolsPanel.add(listPanel, BorderLayout.CENTER);
-		availableToolsPanel.setBorder(new TitledBorder("Available Tools"));
-		availableToolsPanel.getAccessibleContext().setAccessibleName("Available Toolse");
+		availableToolsPanel.setBorder(new TitledBorder("可用工具"));
+		availableToolsPanel.getAccessibleContext().setAccessibleName("可用工具");
 
 		panel.add(availableToolsPanel, BorderLayout.CENTER);
-		panel.getAccessibleContext().setAccessibleName("Import Ghidra Tools");
+		panel.getAccessibleContext().setAccessibleName("导入 Ghidra 工具");
 		return panel;
 	}
 

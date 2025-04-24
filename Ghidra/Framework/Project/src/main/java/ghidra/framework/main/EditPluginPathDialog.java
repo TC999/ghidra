@@ -57,13 +57,13 @@ import resources.Icons;
  */
 class EditPluginPathDialog extends DialogComponentProvider {
 
-	static final String ADD_DIR_BUTTON_TEXT = "Add Dir ...";
-	static final String ADD_JAR_BUTTON_TEXT = "Add Jar ...";
+	static final String ADD_DIR_BUTTON_TEXT = "添加文件夹 ...";
+	static final String ADD_JAR_BUTTON_TEXT = "添加 Jar ...";
 	private final static Color STATUS_MESSAGE_COLOR = Messages.NORMAL;
 	final static String EMPTY_STATUS = " ";
 
 	private ExtensionFileFilter JAR_FILTER =
-		new ExtensionFileFilter(new String[] { "jar", "zip" }, "Plugin Jar Files");
+		new ExtensionFileFilter(new String[] { "jar", "zip" }, "插件 Jar 文件");
 
 	// codes used when handling actions
 	private final static byte UP = (byte) 0;
@@ -200,8 +200,8 @@ class EditPluginPathDialog extends DialogComponentProvider {
 		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 		fileChooser.setFileSelectionMode(GhidraFileChooserMode.FILES_ONLY);
 		fileChooser.setFileFilter(JAR_FILTER);
-		fileChooser.setApproveButtonToolTipText("Choose Plugin Jar File");
-		fileChooser.setApproveButtonText("Add Jar File");
+		fileChooser.setApproveButtonToolTipText("选择插件 Jar 文件");
+		fileChooser.setApproveButtonText("添加 Jar 文件");
 
 		fileChooser.setLastDirectoryPreference(Preferences.LAST_PATH_DIRECTORY);
 

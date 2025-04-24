@@ -69,7 +69,7 @@ class EditActionManager {
 		editPluginPathAction.setEnabled(true);
 
 		editPluginPathAction.setMenuBarData(new MenuData(new String[] { ToolConstants.MENU_EDIT,
-			"Plugin Path..." }, "GEdit"));
+			"插件路径..." }, "GEdit"));
 
 		editCertPathAction = new DockingAction("Set PKI Certificate", plugin.getName()) {
 			@Override

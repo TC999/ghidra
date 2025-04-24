@@ -72,21 +72,21 @@ class FileActionManager {
 	 * creates all the menu items for the File menu
 	 */
 	private void createActions() {
-		new ActionBuilder("New Project", plugin.getName())
-				.menuPath(ToolConstants.MENU_FILE, "New Project...")
+		new ActionBuilder("新建项目", plugin.getName())
+				.menuPath(ToolConstants.MENU_FILE, "新建项目...")
 				.menuGroup("AProject")
 				.keyBinding("ctrl N")
 				.onAction(c -> newProject())
 				.buildAndInstall(tool);
 
-		new ActionBuilder("Open Project", plugin.getName())
-				.menuPath(ToolConstants.MENU_FILE, "Open Project...")
+		new ActionBuilder("打开项目", plugin.getName())
+				.menuPath(ToolConstants.MENU_FILE, "打开项目...")
 				.menuGroup("AProject")
 				.keyBinding("ctrl O")
 				.onAction(c -> openProject())
 				.buildAndInstall(tool);
 
-		saveAction = new DockingAction("Save Project", plugin.getName()) {
+		saveAction = new DockingAction("保存项目", plugin.getName()) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				saveProject();
@@ -97,10 +97,10 @@ class FileActionManager {
 		saveAction.setKeyBindingData(
 			new KeyBindingData(KeyStroke.getKeyStroke(SAVE_ACCELERATOR, ActionEvent.CTRL_MASK)));
 		saveAction.setMenuBarData(
-			new MenuData(new String[] { ToolConstants.MENU_FILE, "Save Project" }, "BProject"));
+			new MenuData(new String[] { ToolConstants.MENU_FILE, "保存项目" }, "BProject"));
 		tool.addAction(saveAction);
 
-		closeProjectAction = new DockingAction("Close Project", plugin.getName()) {
+		closeProjectAction = new DockingAction("关闭项目", plugin.getName()) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				closeProject(false); // not exiting
@@ -110,11 +110,11 @@ class FileActionManager {
 		closeProjectAction.setKeyBindingData(
 			new KeyBindingData(KeyStroke.getKeyStroke(CLOSE_ACCELERATOR, ActionEvent.CTRL_MASK)));
 		closeProjectAction.setMenuBarData(
-			new MenuData(new String[] { ToolConstants.MENU_FILE, "Close Project" }, "BProject"));
+			new MenuData(new String[] { ToolConstants.MENU_FILE, "关闭项目" }, "BProject"));
 		tool.addAction(closeProjectAction);
 
-		new ActionBuilder("Delete Project", plugin.getName())
-				.menuPath(ToolConstants.MENU_FILE, "Delete Project...")
+		new ActionBuilder("删除项目", plugin.getName())
+				.menuPath(ToolConstants.MENU_FILE, "删除项目...")
 				.menuGroup("CProject")
 				.onAction(c -> deleteProject())
 				.buildAndInstall(tool);
@@ -185,7 +185,7 @@ class FileActionManager {
 			return tool.getProjectManager().createProject(locator, repository, true);
 		}
 		catch (Exception e) {
-			Msg.showError(this, tool.getToolFrame(), "Create Project Failed",
+			Msg.showError(this, tool.getToolFrame(), "创建项目出错",
 				"Failed to create new project '" + locator.getName() + "': " + e.getMessage(), e);
 		}
 		return null;

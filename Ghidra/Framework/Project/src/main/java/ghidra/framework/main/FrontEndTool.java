@@ -602,7 +602,7 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 		}
 		if (changedList.size() > 0) {
 			ChangedFilesDialog dialog = new ChangedFilesDialog(tool, changedList);
-			dialog.setCancelToolTipText("Cancel Merge");
+			dialog.setCancelToolTipText("取消合并");
 			if (!dialog.showDialog()) {// blocks until the user hits Save or Cancel
 				Msg.info(this, "Merge canceled");
 				return;
@@ -618,7 +618,7 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 			execute(new MergeTask(tool, list, taskListener));
 		}
 		else {
-			Msg.showError(this, tool.getToolFrame(), "Update Failed", "Unable to update file(s)");
+			Msg.showError(this, tool.getToolFrame(), "更新失败", "Unable to update file(s)");
 		}
 
 	}
@@ -664,7 +664,7 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 			}
 		};
 		MenuData menuData = new MenuData(
-			new String[] { ToolConstants.MENU_FILE, "Install Extensions" }, null, CONFIGURE_GROUP);
+			new String[] { ToolConstants.MENU_FILE, "安装扩展" }, null, CONFIGURE_GROUP);
 		menuData.setMenuSubGroup(CONFIGURE_GROUP + 2);
 		installExtensionsAction.setMenuBarData(menuData);
 
@@ -676,7 +676,7 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 
 	private void addManagePluginsAction() {
 
-		configureToolAction = new DockingAction("Configure Tool", "Project Window") {
+		configureToolAction = new DockingAction("配置工具", "Project Window") {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				showConfig(false, false);
@@ -764,14 +764,14 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 		addHelpActions();
 
 		// our log file action
-		DockingAction action = new DockingAction("Show Log", ToolConstants.TOOL_OWNER) {
+		DockingAction action = new DockingAction("显示日志", ToolConstants.TOOL_OWNER) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				showGhidraUserLogFile();
 			}
 		};
 		action.setMenuBarData(
-			new MenuData(new String[] { ToolConstants.MENU_HELP, "Show Log" }, null, "BBB"));
+			new MenuData(new String[] { ToolConstants.MENU_HELP, "显示日志" }, null, "BBB"));
 
 		action.setEnabled(true);
 		addAction(action);
@@ -888,7 +888,7 @@ public class FrontEndTool extends PluginTool implements OptionsChangeListener {
 		private FileWatcher watcher;
 
 		LogComponentProvider(PluginTool tool, File logFile) {
-			super("Ghidra User Log", false, false, false, false);
+			super("Ghidra 用户日志", false, false, false, false);
 
 			this.logFile = logFile;
 
