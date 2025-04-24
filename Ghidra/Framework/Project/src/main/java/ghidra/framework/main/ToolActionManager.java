@@ -44,14 +44,14 @@ class ToolActionManager implements ToolChestChangeListener {
 	private final static int TYPICAL_NUM_TOOLS_IN_TOOLCHEST = 5;
 	private final static int NEWTOOL_ACCELERATOR = KeyEvent.VK_T;
 
-	private static final String MENU_ITEM_CREATE_TOOL = "&Create Tool..."; // Group: ATools	
-	private static final String MENU_ITEM_RUN_TOOL = "&Run Tool"; // Group: BTools	
-	private static final String MENU_ITEM_DELETE_TOOL = "Delete Tool"; // Group: CTools	
-	private static final String MENU_ITEM_IMPORT_TOOL = "&Import Tool..."; // Group: DTools
-	private static final String MENU_ITEM_IMPORT_DEFAULT_TOOLS = "Import &Default Tools...";
-	private static final String MENU_ITEM_EXPORT_TOOL = "&Export Tool";
-	private static final String MENU_ITEM_CONNECT_TOOLS = "Connect &Tools..."; // Group: ETools     
-	private static final String MENU_ITEM_SET_DEFAULT_TOOL = "&Set As Default"; // Group: FTools 
+	private static final String MENU_ITEM_CREATE_TOOL = "&创建工具..."; // Group: ATools	
+	private static final String MENU_ITEM_RUN_TOOL = "&运行工具"; // Group: BTools	
+	private static final String MENU_ITEM_DELETE_TOOL = "删除工具"; // Group: CTools	
+	private static final String MENU_ITEM_IMPORT_TOOL = "&导入工具..."; // Group: DTools
+	private static final String MENU_ITEM_IMPORT_DEFAULT_TOOLS = "导入 &默认工具...";
+	private static final String MENU_ITEM_EXPORT_TOOL = "&导出工具";
+	private static final String MENU_ITEM_CONNECT_TOOLS = "连接 &工具..."; // Group: ETools     
+	private static final String MENU_ITEM_SET_DEFAULT_TOOL = "&设为默认"; // Group: FTools 
 
 	private FrontEndPlugin plugin;
 	private FrontEndTool tool;
@@ -111,7 +111,7 @@ class ToolActionManager implements ToolChestChangeListener {
 
 	private void createActions() {
 		// create the menu items and listeners
-		createToolAction = new DockingAction("Create Tool", plugin.getName()) {
+		createToolAction = new DockingAction("创建工具", plugin.getName()) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				createNewTool();
@@ -127,7 +127,7 @@ class ToolActionManager implements ToolChestChangeListener {
 
 		tool.addAction(createToolAction);
 
-		importAction = new DockingAction("Import Tool", plugin.getName()) {
+		importAction = new DockingAction("导入工具", plugin.getName()) {
 			@Override
 			public void actionPerformed(ActionContext e) {
 				importTool();
@@ -155,7 +155,7 @@ class ToolActionManager implements ToolChestChangeListener {
 		importDefaultToolsAction.setEnabled(false);
 		tool.addAction(importDefaultToolsAction);
 
-		connectToolsAction = new DockingAction("Connect Tools", plugin.getName()) {
+		connectToolsAction = new DockingAction("连接工具", plugin.getName()) {
 			@Override
 			public void actionPerformed(ActionContext e) {
 				connectTools();
@@ -366,7 +366,7 @@ class ToolActionManager implements ToolChestChangeListener {
 	private void createPlaceHolderActions() {
 		String owner = plugin.getName();
 
-		DockingAction action = new DockingAction("Run Tool", owner) {
+		DockingAction action = new DockingAction("运行工具", owner) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				// no-op; placeholder action
@@ -380,7 +380,7 @@ class ToolActionManager implements ToolChestChangeListener {
 		tool.addAction(action);
 		runToolActionMap.put(action.getName(), action);
 
-		action = new DockingAction("Delete Tool", owner) {
+		action = new DockingAction("删除工具", owner) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				// no-op; placeholder action
